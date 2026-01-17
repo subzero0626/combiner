@@ -1,0 +1,218 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #e8e8e8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #fff;
+    overflow: hidden;
+}
+
+#gameContainer {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#gameCanvas {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    background: #1a1a2e;
+}
+
+#ui {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+}
+
+#topUI {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+#healthBar {
+    position: relative;
+    width: 200px;
+    height: 30px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid #fff;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+#healthFill {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, #ff4444, #ff6666);
+    transition: width 0.3s ease;
+}
+
+#healthText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    pointer-events: none;
+}
+
+#timer {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4ecdc4;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    min-width: 80px;
+    text-align: center;
+}
+
+#score {
+    font-size: 18px;
+    color: #ffd700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.hidden {
+    display: none !important;
+}
+
+#startScreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#gameOverScreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.startContent {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.startContent .mainTitle {
+    font-size: 96px;
+    margin-bottom: 20px;
+    color: #2a9d8f;
+    text-shadow: 0 0 10px rgba(42, 157, 143, 0.3);
+}
+
+
+.mainMenu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.mainMenu .menuBtn {
+    font-size: 24px;
+    padding: 15px 50px;
+    min-width: 200px;
+}
+
+.gameOverContent {
+    text-align: center;
+    background: rgba(26, 26, 46, 0.95);
+    padding: 40px;
+    border-radius: 10px;
+    border: 2px solid #4ecdc4;
+    box-shadow: 0 0 30px rgba(78, 205, 196, 0.3);
+}
+
+.gameOverContent h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #ff4444;
+}
+
+.gameOverContent p {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #ccc;
+}
+
+button {
+    background: linear-gradient(135deg, #4ecdc4, #44a08d);
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(78, 205, 196, 0.3);
+    pointer-events: auto;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(78, 205, 196, 0.5);
+    background: linear-gradient(135deg, #5eddd4, #54b09d);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* 메뉴 아이템은 버튼 스타일 제외 */
+.mainMenu .menuItem {
+    background: none;
+    border: none;
+    box-shadow: none;
+    margin: 0;
+    padding: 8px 20px;
+}
+
+#finalScore {
+    color: #ffd700;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#coinsEarned {
+    color: #4ecdc4;
+    font-size: 20px;
+    font-weight: bold;
+}
